@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng nhập</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <!-- Form đăng nhập -->
+    <section id="login-view">
+      <h1>Đăng nhập</h1>
+      <p class="subtitle">Bài tập Fullstack: HTML/CSS/JS + Node.js Express</p>
+
+      <form id="login-form" novalidate>
+        <div class="field">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" placeholder="Nhập username" autocomplete="username">
+          <small class="error" id="username-error"></small>
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Nhập password" autocomplete="current-password">
+          <small class="error" id="password-error"></small>
+        </div>
+
+        <button type="submit" id="submit-btn">Đăng nhập</button>
+      </form>
+    </section>
+
+    <!-- Màn hình sau khi đăng nhập (dùng session) -->
+    <section id="welcome-view" hidden>
+      <h1>Xin chào, <span id="welcome-name"></span>!</h1>
+      <p class="subtitle">Bạn đang đăng nhập (trạng thái được lưu bằng session cookie).</p>
+      <p class="meta">Đăng nhập lúc: <span id="login-time"></span></p>
+      <button id="logout-btn" class="secondary">Đăng xuất</button>
+    </section>
+
+    <!-- Vùng thông báo kết quả -->
+    <div id="message" class="message" role="alert" hidden></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
