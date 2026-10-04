@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Lab 6 – SQL Injection</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Đăng nhập demo</h1>
+    <p class="subtitle">Lab 6 – SQL Injection. Tài khoản thật: <b>user1 / Pass123</b></p>
+
+    <form id="login-form" novalidate>
+      <div class="field">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Username">
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="text" id="password" name="password" placeholder="Password">
+      </div>
+
+      <div class="hint">
+        Thử payload đăng nhập trái phép (dán vào ô Username, để trống Password):<br>
+        <code onclick="fill(this)">' OR '1'='1' --</code>
+        <code onclick="fill(this)">admin' --</code>
+      </div>
+
+      <div class="target">
+        <label>Gửi tới endpoint:</label>
+        <label class="radio"><input type="radio" name="endpoint" value="vulnerable" checked> /api/login-vulnerable (có lỗ hổng)</label>
+        <label class="radio"><input type="radio" name="endpoint" value="secure"> /api/login-secure (tham số hoá)</label>
+      </div>
+
+      <button type="submit">Đăng nhập</button>
+    </form>
+
+    <div id="message" class="message" role="alert" hidden></div>
+    <pre id="raw" class="raw" hidden></pre>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

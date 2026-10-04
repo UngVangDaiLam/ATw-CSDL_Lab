@@ -1,0 +1,14 @@
+[*] Thử SQL Injection -> /api/login-secure
+
+  Đăng nhập thường, mật khẩu SAI
+    username = 'user1' | password = 'sai_mat_khau'
+    -> ✘ bị từ chối (HTTP 401) | Sai username hoặc mật khẩu.
+
+  SQLI: ' OR '1'='1' --  (bỏ qua mật khẩu)
+    username = "' OR '1'='1' --" | password = ''
+    -> ✘ bị từ chối (HTTP 401) | Sai username hoặc mật khẩu.
+
+  SQLI: admin' --  (đăng nhập thẳng vào admin)
+    username = "admin' --" | password = ''
+    -> ✘ bị từ chối (HTTP 401) | Sai username hoặc mật khẩu.
+
