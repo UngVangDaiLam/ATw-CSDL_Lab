@@ -1,0 +1,8 @@
+[*] Bắt đầu brute force -> /api/login-protected  (user: user1)
+[*] Wordlist: 12 mật khẩu
+
+[ 1/12] thử '123456'               -> ✘ sai (HTTP 401)
+[ 2/12] thử 'password'             -> ✘ sai (HTTP 401)
+[ 3/12] thử 'admin'                -> 🧩 YÊU CẦU CAPTCHA: Sai username hoặc mật khẩu. (Đã sai 3/5 lần)
+
+[-] Dừng ở lần thử 3: server bắt CAPTCHA, script tự động không vượt qua được.

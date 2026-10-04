@@ -1,0 +1,15 @@
+[*] Bắt đầu brute force -> /api/login-unprotected  (user: user1)
+[*] Wordlist: 12 mật khẩu
+
+[ 1/12] thử '123456'               -> ✘ sai (HTTP 401)
+[ 2/12] thử 'password'             -> ✘ sai (HTTP 401)
+[ 3/12] thử 'admin'                -> ✘ sai (HTTP 401)
+[ 4/12] thử 'qwerty'               -> ✘ sai (HTTP 401)
+[ 5/12] thử '111111'               -> ✘ sai (HTTP 401)
+[ 6/12] thử 'user1'                -> ✘ sai (HTTP 401)
+[ 7/12] thử 'letmein'              -> ✘ sai (HTTP 401)
+[ 8/12] thử 'abc123'               -> ✘ sai (HTTP 401)
+[ 9/12] thử 'iloveyou'             -> ✘ sai (HTTP 401)
+[10/12] thử 'Pass123'              -> ✔ THÀNH CÔNG! Mật khẩu = 'Pass123'
+
+[+] Tìm ra mật khẩu sau 10 lần thử.

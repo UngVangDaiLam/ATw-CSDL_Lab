@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Lab 5 – Brute Force & phòng chống</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Đăng nhập demo</h1>
+    <p class="subtitle">Lab 5 – Tài khoản demo: <b>user1 / Pass123</b></p>
+
+    <form id="login-form" novalidate>
+      <div class="field">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" value="user1" placeholder="Username">
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Password">
+      </div>
+
+      <div id="captcha-box" class="field" hidden>
+        <label for="captcha">CAPTCHA: <span id="captcha-q"></span></label>
+        <input type="text" id="captcha" name="captcha" placeholder="Nhập kết quả">
+      </div>
+
+      <div class="target">
+        <label>Gửi tới endpoint:</label>
+        <label class="radio"><input type="radio" name="endpoint" value="protected" checked> /api/login-protected (có bảo vệ)</label>
+        <label class="radio"><input type="radio" name="endpoint" value="unprotected"> /api/login-unprotected (không bảo vệ)</label>
+      </div>
+
+      <button type="submit">Đăng nhập</button>
+    </form>
+
+    <div id="message" class="message" role="alert" hidden></div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

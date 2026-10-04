@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Lab 4 – Bypass kiểm soát client</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Form đăng nhập demo</h1>
+    <p class="subtitle">Lab 4 – Kiểm soát phía client: <b>username không trống</b> và <b>password ≥ 6 ký tự</b></p>
+
+    <form id="login-form" novalidate>
+      <div class="field">
+        <label for="username">Username</label>
+        <!-- Kiểm soát client bằng cả HTML (required, minlength) lẫn JS -->
+        <input type="text" id="username" name="username" required placeholder="Nhập username">
+        <small class="error" id="username-error"></small>
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required minlength="6" placeholder="Ít nhất 6 ký tự">
+        <small class="error" id="password-error"></small>
+      </div>
+
+      <div class="target">
+        <label>Gửi tới endpoint:</label>
+        <label class="radio"><input type="radio" name="endpoint" value="insecure" checked> /api/login-insecure (không kiểm tra lại)</label>
+        <label class="radio"><input type="radio" name="endpoint" value="secure"> /api/login-secure (có kiểm tra lại)</label>
+      </div>
+
+      <button type="submit">Đăng nhập</button>
+    </form>
+
+    <div id="message" class="message" role="alert" hidden></div>
+    <pre id="raw" class="raw" hidden></pre>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
