@@ -106,7 +106,7 @@ Thông báo "Đăng nhập thành công! Xin chào admin." hiện ngay trên tra
    - Sai → trả `401` / `400` kèm thông báo lỗi.
 5. JS nhận JSON, cập nhật DOM để hiện thông báo → **không reload trang** (đây là bản chất của AJAX).
 6. Các request sau, trình duyệt tự gửi cookie → server biết người dùng đã đăng nhập (`GET /api/me`).
-
+Link github:https://github.com/UngVangDaiLam/ATw-CSDL_Lab.git
 **Nhận xét:**
 
 - **Tách biệt trách nhiệm**: client lo giao diện và trải nghiệm; server lo logic nghiệp vụ, xác thực và dữ liệu. Hai bên chỉ giao tiếp qua HTTP + JSON, nên có thể thay frontend (ví dụ app mobile) mà không đổi backend.
