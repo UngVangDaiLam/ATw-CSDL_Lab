@@ -1,0 +1,5 @@
+KIEM CHUNG XSS BANG TRINH DUYET TU DONG (Playwright)
+Payload: <script>alert('XSS')</script>
+
+[/search-vulnerable]  -> hop thoai alert("XSS") BAT  => XSS THUC THI (co lo hong)
+[/search-secure]      -> KHONG co alert, payload hien thi dang chu => AN TOAN

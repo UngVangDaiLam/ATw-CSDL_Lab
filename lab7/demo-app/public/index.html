@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Lab 7 – XSS</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Tìm kiếm demo</h1>
+    <p class="subtitle">Lab 7 – Reflected XSS. Thử payload rồi so sánh 2 endpoint.</p>
+
+    <div class="hint">
+      Payload thử (bấm để điền):<br>
+      <code onclick="fill(this)">&lt;script&gt;alert('XSS')&lt;/script&gt;</code>
+      <code onclick="fill(this)">&lt;img src=x onerror=alert('XSS')&gt;</code>
+    </div>
+
+    <form id="f" method="GET">
+      <div class="field">
+        <label for="q">Từ khoá tìm kiếm</label>
+        <input type="text" id="q" name="q" placeholder="Nhập từ khoá...">
+      </div>
+      <div class="target">
+        <label>Gửi tới trang:</label>
+        <label class="radio"><input type="radio" name="ep" value="vulnerable" checked> /search-vulnerable (có lỗ hổng)</label>
+        <label class="radio"><input type="radio" name="ep" value="secure"> /search-secure (có escape)</label>
+      </div>
+      <button type="submit">Tìm kiếm</button>
+    </form>
+  </main>
+  <script>
+    function fill(el){ document.getElementById('q').value = el.textContent; }
+    document.getElementById('f').addEventListener('submit', function(e){
+      e.preventDefault();
+      const q = encodeURIComponent(document.getElementById('q').value);
+      const ep = document.querySelector('input[name=ep]:checked').value;
+      location.href = '/search-' + ep + '?q=' + q;
+    });
+  </script>
+</body>
+</html>

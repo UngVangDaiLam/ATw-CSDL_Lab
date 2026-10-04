@@ -1,0 +1,20 @@
+[DÍNH] CAO      SQL Injection (A03)
+        Payload "' OR '1'='1' --" đăng nhập được mà không cần mật khẩu.
+
+[DÍNH] CAO      Reflected XSS (A03)
+        Tham số q được phản chiếu nguyên văn, chưa mã hoá -> script thực thi.
+
+[DÍNH] CAO      Broken Auth / Session (A07)
+        Cookie 'auth' không ký, chỉ cần đặt auth=hacker:admin là chiếm quyền admin.
+
+[DÍNH] CAO      Broken Access Control (A01)
+        Trang /admin lộ danh sách toàn bộ user (kể cả email) mà không xác thực thật.
+
+[DÍNH] TRUNG BÌNH IDOR (A01)
+        /api/profile?id= không kiểm tra quyền -> đọc hồ sơ bất kỳ: id=1:user1/user, id=2:alice/user, id=3:admin/admin
+
+[DÍNH] TRUNG BÌNH Cookie thiếu cờ bảo mật (A05)
+        Set-Cookie: thiếu HttpOnly, thiếu Secure, thiếu SameSite -> JS đọc được cookie, dễ bị đánh cắp.
+
+============================================================
+TỔNG: phát hiện 6 lỗ hổng.

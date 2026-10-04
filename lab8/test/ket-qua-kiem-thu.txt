@@ -1,0 +1,10 @@
+KET QUA KIEM THU CAC BIEN PHAP BAO MAT (chay qua HTTPS localhost:8443)
+
+(3) CSRF : POST /login THIEU token        -> HTTP 403  CHAN CSRF
+(2) SQLi : /login voi  ' OR '1'='1         -> BI TU CHOI (prepared statement vo hieu hoa)
+(6) bcrypt: dang nhap dung mat khau        -> chuyen sang buoc OTP (so khop bang bcrypt.compare)
+(4) MFA  : truy cap sau mat khau           -> YEU CAU NHAP OTP (Google Authenticator)
+(4) MFA  : nhap OTP dung                   -> DANG NHAP HOAN TAT (qua 2 lop)
+(1) XSS  : binh luan <script>alert(1)</script> -> luu & hien dang &lt;script&gt; (DA MA HOA)
+(6) Luu  : mat khau trong DB = $2b$10$...  (bcrypt hash + salt, KHONG phai plaintext)
+(5) HTTPS: server chay tren https://localhost:8443 (self-signed certificate)
